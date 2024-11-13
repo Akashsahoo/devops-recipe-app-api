@@ -1,4 +1,22 @@
-############
+resource "aws_iam_service_linked_role" "rds" {
+  aws_service_name = "rds.amazonaws.com"
+}
+
+resource "time_sleep" "wait_10_seconds" {
+  depends_on      = [aws_iam_service_linked_role.rds]
+  create_duration = "10s"
+}
+
+
+# module "rds_postgresql"  {
+#   source  = "terraform-aws-modules/rds/aws"
+#   version = ">= 3.4.0"
+#   depends_on = [
+#     aws_iam_service_linked_role.rds,
+#     time_sleep.wait_10_seconds
+#   ]
+# }
+# ############
 # Database #
 ############
 
