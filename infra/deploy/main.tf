@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket               = "devops-recipe-app-tf-state-priyaakash"
+    bucket               = "devops-recipe-app-tf-state-new-priyaakash"
     key                  = "tf-state-deploy"
     workspace_key_prefix = "tf-state-deploy-env"
     region               = "us-east-1"
