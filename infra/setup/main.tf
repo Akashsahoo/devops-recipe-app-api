@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "devops-recipe-app-tf-state-priyaakash"
+    bucket         = "devops-recipe-app-tf-state-new-priyaakash"
     key            = "tf-state-setup"
     region         = "us-east-1"
     encrypt        = true
